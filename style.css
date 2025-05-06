@@ -1,0 +1,97 @@
+/* Base styles */
+body {
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(to bottom, #1c1c1c, #2a2a2a);
+    color: white;
+  }
+  
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  /* Header */
+  header {
+    background-color: #1c1c1c;
+    border-bottom: 1px solid #333;
+    padding-top: 3rem;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.2rem;
+    color: white;
+  }
+  
+  header .tagline {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+  }
+  
+  nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #bbb;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  
+  nav a:hover {
+    color: white;
+  }
+  
+  /* Projects Grid */
+  #projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .project-card {
+    background-color: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .project-card:hover {
+    background-color: #333;
+    transform: translateY(-5px);
+  }
+  
+  .project-card h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: white;
+  }
+  
+  .project-card p {
+    color: #aaa;
+    font-size: 1rem;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid #333;
+    color: #999;
+  }
+  
+  footer .socials a {
+    margin: 0 0.75rem;
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  footer .socials a:hover {
+    color: white;
+  }
+  
