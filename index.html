@@ -2,52 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fernando Contreras | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software Developer Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Fernando Contreras</h1>
-      <p class="tagline">Crafting Innovative Solutions</p>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+  <header class="navbar">
+    <img src="profile.jpg" alt="Profile" class="avatar" />
+    <nav class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="https://github.com">GitHub</a>
+      <button class="cta-btn">Start a Project</button>
+    </nav>
   </header>
 
-  <main class="container">
-    <section id="projects">
-      <div class="project-card">
-        <h2>GenCode</h2>
-        <p>A modern QR and barcode generator for websites.</p>
-      </div>
-      <div class="project-card">
-        <h2>Time Tracker</h2>
-        <p>A dashboard app to monitor productivity in real time.</p>
-      </div>
-      <div class="project-card">
-        <h2>Brick Breaker Game</h2>
-        <p>A Flutter-based classic arcade game with responsive controls.</p>
-      </div>
-    </section>
-  </main>
+  <section class="hero">
+    <img src="profile.jpg" alt="Profile" class="hero-img" />
+    <h1>Software Developer</h1>
+    <p>Building responsive websites and mobile apps with Flutter & JavaScript.</p>
+  </section>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Fernando Contreras</p>
-      <div class="socials">
-        <a href="#">GitHub</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Twitters</a>
+  <section class="projects" id="projects">
+    <div class="project-card green">
+      <h2>Budget Planner Finance App</h2>
+      <p>With a user-centered approach, the goal was to create an intuitive interface for effortless financial management while incorporating gamification.</p>
+      <div class="project-stats">
+        <span><strong>Engagement:</strong> 12 min</span>
+        <span><strong>User Satisfaction:</strong> 4.5★</span>
       </div>
     </div>
-  </footer>
+
+    <div class="project-card peach">
+      <h2>Recipe Book App</h2>
+      <p>A Flutter app showcasing international recipes with structured JSON data. It demonstrates Flutter UI, JSON parsing, and state management.</p>
+      <button>View Repository</button>
+    </div>
+
+    <div class="project-card purple">
+      <h2>Time Tracking Dashboard</h2>
+      <p>A responsive Flutter dashboard to track time spent across different activities using smooth UI inspired by Frontend Mentor.</p>
+      <div class="btn-group">
+        <button>View Repository</button>
+        <button>View Online</button>
+      </div>
+    </div>
+
+    <div class="project-card blue">
+      <h2>UI Design for Internet Sharing App</h2>
+      <p>Innovative UI for monetizing unused internet. Focuses on simplicity, functionality, and creative earning methods.</p>
+      <div class="project-stats">
+        <span><strong>Conversion Rate:</strong> 20%</span>
+        <span><strong>User Satisfaction:</strong> 95%</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills">
+    <h2>Skills</h2>
+    <div class="tags">
+      <span>UX Design</span>
+      <span>UI Design</span>
+      <span>Product Design</span>
+      <span>Design Systems</span>
+      <span>Front-End Development</span>
+      <span>Workshops</span>
+      <span>Design Sprint</span>
+      <span>Interaction Design</span>
+      <span>User Testing</span>
+      <span>Usability Testing</span>
+      <span>UX Research</span>
+      <span>Leadership</span>
+      <span>Mentoring</span>
+      <span>No-Code</span>
+      <span class="more">+ More</span>
+    </div>
+  </section>
 </body>
 </html>
