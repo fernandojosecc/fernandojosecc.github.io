@@ -1,3 +1,4 @@
+/* RESET & BASE */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,20 +6,37 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f8;
-  color: #333;
-  line-height: 1.6;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f9f8f5;
+  overflow-x: hidden;
 }
 
-.navbar {
-  position: sticky;
+html, body {
+  height: 100%;
+}
+
+#tsparticles {
+  position: fixed;
   top: 0;
-  background: #fff;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* BELOW everything */
+  pointer-events: none;
+}
+
+
+
+/* NAVIGATION */
+.navbar {
+  height: 101px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: rgba(255, 255, 255, 0.8); /* semi-transparent */
+  backdrop-filter: blur(20px);         /* optional glow */
   box-shadow: 0 1px 10px rgba(0,0,0,0.05);
   z-index: 1000;
 }
@@ -29,12 +47,15 @@ body {
   border-radius: 50%;
 }
 
-.nav-links a, .cta-btn {
+.nav-links a,
+.cta-btn {
   margin-left: 1.5rem;
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  display: inline-block;
 }
+
 
 .cta-btn {
   background: #000;
@@ -45,10 +66,25 @@ body {
   cursor: pointer;
 }
 
+button:hover,
+.cta-btn:hover {
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+
+/* HERO SECTION */
 .hero {
+  position: relative;
+  height: 393px;
   text-align: center;
-  padding: 3rem 1rem;
-  background: linear-gradient(135deg, #fceade 50%, #fff 50%);
+  background: #f9f8f5;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-img {
@@ -56,6 +92,95 @@ body {
   height: 100px;
   border-radius: 50%;
   margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  max-width: 436px;
+  min-height: 58px;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  word-wrap: break-word;
+}
+
+.hero p {
+  max-width: 480px;
+  min-height: 67px;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #444;
+  margin: 0 auto;
+}
+
+/* HERO VISUAL EFFECTS */
+.hero-blur-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 600px;
+  z-index: -1;
+  background: radial-gradient(circle, rgba(255, 150, 200, 0.2) 0%, #ffffff 80%);
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+
+.hero .hero-blobs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+.hero .blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  filter: blur(100px);
+  opacity: 0.3;
+  border-radius: 50%;
+  animation: float 12s ease-in-out infinite;
+}
+
+.hero .blob1 {
+  top: 0;
+  left: -100px;
+  background: radial-gradient(circle, rgba(255, 180, 200, 1) 0%, transparent 70%);
+}
+
+.hero .blob2 {
+  top: 0;
+  right: -100px;
+  background: radial-gradient(circle, rgba(120, 200, 255, 1) 0%, transparent 70%);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.1); }
+  100% { transform: translateY(0px) scale(1); }
+}
+
+/* PROJECT SECTION */
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-inline: 1rem;
 }
 
 .projects {
@@ -100,6 +225,7 @@ button {
   cursor: pointer;
 }
 
+/* SKILLS SECTION */
 .skills {
   padding: 2rem 1rem;
   max-width: 900px;
@@ -118,7 +244,7 @@ button {
 
 .tags span {
   background: #dcecf9;
-  color: #234;
+  color: #112233;
   padding: 0.4rem 0.9rem;
   border-radius: 20px;
   font-size: 0.9rem;
@@ -128,11 +254,13 @@ button {
   background: #b0c4de;
 }
 
-.green { background: #e6f5e4; }
-.peach { background: #fdece3; }
+/* COLOR LABELS */
+.green  { background: #e6f5e4; }
+.peach  { background: #fdece3; }
 .purple { background: #efe6fa; }
-.blue { background: #e4f1fc; }
+.blue   { background: #e4f1fc; }
 
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .nav-links {
     display: none;

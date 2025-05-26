@@ -4,11 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Software Developer Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <!-- Particle background -->
+    
+    <div id="tsparticles"></div> <!-- deepest background -->
+  <div class="hero-blur-bg"></div> <!-- blur on top of particles -->
+
   <header class="navbar">
-    <img src="profile.jpg" alt="Profile" class="avatar" />
+    <img src="profile.jpg" alt="Portrait of Software Developer Fernando" class="avatar" />
     <nav class="nav-links">
       <a href="#projects">Projects</a>
       <a href="https://github.com">GitHub</a>
@@ -16,66 +23,97 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <img src="profile.jpg" alt="Profile" class="hero-img" />
-    <h1>Software Developer</h1>
-    <p>Building responsive websites and mobile apps with Flutter & JavaScript.</p>
-  </section>
 
-  <section class="projects" id="projects">
-    <div class="project-card green">
-      <h2>Budget Planner Finance App</h2>
-      <p>With a user-centered approach, the goal was to create an intuitive interface for effortless financial management while incorporating gamification.</p>
-      <div class="project-stats">
-        <span><strong>Engagement:</strong> 12 min</span>
-        <span><strong>User Satisfaction:</strong> 4.5★</span>
+  <main>
+
+   
+    <section class="hero">
+      
+      <img src="profile.jpg" alt="Portrait of Software Developer Fernando" class="hero-img" />
+      <div class="hero-text">
+        <h1>Software Developer</h1>
+        <p>Building responsive websites and mobile apps with Flutter & JavaScript.</p>
       </div>
-    </div>
 
-    <div class="project-card peach">
-      <h2>Recipe Book App</h2>
-      <p>A Flutter app showcasing international recipes with structured JSON data. It demonstrates Flutter UI, JSON parsing, and state management.</p>
-      <button>View Repository</button>
-    </div>
+      <div class="background-blobs">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+      </div>
+    </section>
 
-    <div class="project-card purple">
-      <h2>Time Tracking Dashboard</h2>
-      <p>A responsive Flutter dashboard to track time spent across different activities using smooth UI inspired by Frontend Mentor.</p>
-      <div class="btn-group">
+    <div class="container">
+    <section class="projects" id="projects">
+      <div class="project-card green enhanced-card" id="budgetCard">
+        <h2>Budget Planner Finance App</h2>
+        <p>With a user-centered approach, the goal was to create an intuitive interface for effortless financial management while incorporating gamification.</p>
+        <div class="project-stats">
+          <span><strong>Engagement:</strong> 12 min</span>
+          <span><strong>User Satisfaction:</strong> 4.5★</span>
+        </div>
+      </div>
+
+      <div class="project-card peach">
+        <h2>Recipe Book App</h2>
+        <p>A Flutter app showcasing international recipes with structured JSON data. It demonstrates Flutter UI, JSON parsing, and state management.</p>
         <button>View Repository</button>
-        <button>View Online</button>
       </div>
-    </div>
 
-    <div class="project-card blue">
-      <h2>UI Design for Internet Sharing App</h2>
-      <p>Innovative UI for monetizing unused internet. Focuses on simplicity, functionality, and creative earning methods.</p>
-      <div class="project-stats">
-        <span><strong>Conversion Rate:</strong> 20%</span>
-        <span><strong>User Satisfaction:</strong> 95%</span>
+      <div class="project-card purple">
+        <h2>Time Tracking Dashboard</h2>
+        <p>A responsive Flutter dashboard to track time spent across different activities using smooth UI inspired by Frontend Mentor.</p>
+        <div class="btn-group">
+          <button>View Repository</button>
+          <button>View Online</button>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <section class="skills">
-    <h2>Skills</h2>
-    <div class="tags">
-      <span>UX Design</span>
-      <span>UI Design</span>
-      <span>Product Design</span>
-      <span>Design Systems</span>
-      <span>Front-End Development</span>
-      <span>Workshops</span>
-      <span>Design Sprint</span>
-      <span>Interaction Design</span>
-      <span>User Testing</span>
-      <span>Usability Testing</span>
-      <span>UX Research</span>
-      <span>Leadership</span>
-      <span>Mentoring</span>
-      <span>No-Code</span>
-      <span class="more">+ More</span>
-    </div>
-  </section>
+      <div class="project-card blue">
+        <h2>UI Design for Internet Sharing App</h2>
+        <p>Innovative UI for monetizing unused internet. Focuses on simplicity, functionality, and creative earning methods.</p>
+        <div class="project-stats">
+          <span><strong>Conversion Rate:</strong> 20%</span>
+          <span><strong>User Satisfaction:</strong> 95%</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+    <section class="skills">
+      <h2>Skills</h2>
+      <div class="tags">
+        <span>UX Design</span>
+        <span>UI Design</span>
+        <span>Product Design</span>
+        <span>Design Systems</span>
+        <span>Front-End Development</span>
+        <span>Workshops</span>
+        <span>Design Sprint</span>
+        <span>Interaction Design</span>
+        <span>User Testing</span>
+        <span>Usability Testing</span>
+        <span>UX Research</span>
+        <span>Leadership</span>
+        <span>Mentoring</span>
+        <span>No-Code</span>
+        <span class="more">+ More</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- Custom behavior JS -->
+  <script>
+    const card = document.getElementById("budgetCard");
+    function getRandomColor() {
+      const colors = ["#e6f5e4", "#fdece3", "#efe6fa", "#e4f1fc", "#fff0f6", "#e0f7fa"];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+    card.addEventListener("click", () => {
+      card.style.backgroundColor = getRandomColor();
+    });
+  </script>
+
+  <!-- tsParticles + config -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script type="module" src="particles-config.js"></script>
 </body>
 </html>
